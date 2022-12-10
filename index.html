@@ -7,14 +7,14 @@
 <body>
 
     <video>
-        <source id="src" src="" type="video/x-matroska">
+        <source id="src" src="" type="video/mp4">
     </video>
 
 
 <script type="module">
     const srcEl = document.querySelector('#src');
     const resp = await fetch('https://storage.yandexcloud.net/project-star-wars/anakin-nosound.mkv', {
-        mode: 'cors',
+        mode: 'no-cors',
         headers: {
             range: 'bytes=0-'
         }
