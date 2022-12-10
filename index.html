@@ -6,5 +6,24 @@
 </head>
 <body>
 
+    <video>
+        <source id="src" src="" type="video/x-matroska">
+    </video>
+
+
+<script>
+    const srcEl = document.querySelector('#src');
+    const resp = await fetch('https://storage.yandexcloud.net/project-star-wars/anakin-nosound.mkv', {
+        mode: 'cors',
+        headers: {
+            range: 'bytes=0-'
+        }
+    })
+
+    const blobUrl = URL.createObjectURL(await resp.blob())
+
+    srcEl.setAttribute('src', blobUrl)
+</script>
+
 </body>
 </html>
